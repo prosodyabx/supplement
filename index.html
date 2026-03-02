@@ -57,13 +57,15 @@
   Dataset: <a href="https://github.com/prosodyabx/prosody-abx-datasets">prosodyabx/prosody-abx-datasets</a>
 </p>
 
-<div class="color-legend" id="color-legend"></div>
-
 <!-- ─── Layer-wise ────────────────────────────────────────────────────── -->
 <h2 id="layer-wise">Layer-wise Error Curves</h2>
 <p>ABX error rate (%) by layer for all 17 S3Ms and 2 baselines. Lower is better.
    Labeled dots mark each model's best layer. The human baseline is the dashed <span style="color:#D55E00">vermillion</span> line.
    Click legend entries to isolate or hide individual models.</p>
+<div class="filter-group" style="margin-bottom: 0.9rem;">
+  <span class="filter-label">Pretraining language (line color)</span>
+  <div class="color-legend" id="color-legend-lw"></div>
+</div>
 
 <div class="tabs" id="tabs-lw-task">
   <button class="tab active" data-task="stress">English Stress</button>
@@ -103,7 +105,11 @@
 <!-- ─── Rankings ─────────────────────────────────────────────────────── -->
 <h2 id="rankings">Per-Task Model Rankings</h2>
 <p>Best-layer ABX error rate (%), ranked best to worst.
-   Bars are colored by pretraining language. The human baseline is the dashed vertical line.</p>
+   The human baseline is the dashed vertical line.</p>
+<div class="filter-group" style="margin-bottom: 0.9rem;">
+  <span class="filter-label">Pretraining language (bar color)</span>
+  <div class="color-legend" id="color-legend-rank"></div>
+</div>
 
 <div class="tabs" id="tabs-rank-task">
   <button class="tab active" data-task="stress">English Stress</button>
@@ -433,11 +439,13 @@ function buildLegend() {
       <div class="legend-swatch" style="background:${color}"></div>
       <span>${lang}</span>
     </div>`);
-  items.push(`<div class="legend-item">
+  const humanItem = `<div class="legend-item">
     <div class="legend-swatch" style="background:#D55E00;height:2px;border-top:2px dashed #D55E00"></div>
     <span>Human baseline</span>
-  </div>`);
-  document.getElementById('color-legend').innerHTML = items.join('');
+  </div>`;
+  const html = items.join('') + humanItem;
+  document.getElementById('color-legend-lw').innerHTML = html;
+  document.getElementById('color-legend-rank').innerHTML = html;
 }
 
 // ── Init ────────────────────────────────────────────────────────────────
