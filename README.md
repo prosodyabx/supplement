@@ -5,7 +5,7 @@ Interactive supplementary material for:
 > *Prosodic ABX: A Language-Agnostic Training-Free Metric of Prosodic Contrast in Speech Representations*
 > Submitted to Interspeech 2026
 
-Hosted at: <https://prosodyabx.github.io/prosodic-abx-supplementary/>
+Hosted at: <https://prosodyabx.github.io/supplement/>
 
 ## Contents
 
@@ -57,6 +57,6 @@ If you need to re-clone (e.g. after `paper/supplementary/.git` is deleted):
 ```bash
 cd paper/supplementary
 git init
-git remote add origin https://prosodyabx:$(cat ~/.prosody-abx-datasets-token)@github.com/prosodyabx/prosodic-abx-supplementary.git
+git remote add origin https://prosodyabx:$(cat ~/.prosody-abx-datasets-token)@github.com/prosodyabx/supplement.git
 git push -u origin master
 ```
