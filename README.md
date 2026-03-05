@@ -2,7 +2,7 @@
 
 Interactive supplementary material for:
 
-> *Prosodic ABX: A Language-Agnostic Training-Free Metric of Prosodic Contrast in Speech Representations*
+> *Prosodic ABX: A Language-Agnostic Method for Measuring Prosodic Contrast in Speech Representations*
 > Submitted to Interspeech 2026
 
 Hosted at: <https://prosodyabx.github.io/supplement/>
